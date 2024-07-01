@@ -27,7 +27,6 @@ fit_x = [0 1];
 fit_y = polyval(fTx,fit_x * x_length);
 plot(fit_x,fit_y)
 legend("Experimental", "Fitted Line")
-title("Temperature Profile for 5 ns")
 xlabel("x")
 ylabel("Temperature (K)")
 hold off
@@ -46,7 +45,6 @@ figure(2)
 hold on
 plot(time/1000,Ehot,time/1000,Ecold)
 legend("Hot thermostat","Cold thermostat")
-title("Energy Produced by Thermostats")
 xlabel("Time (ns)")
 ylabel("Energy (eV)")
 hold off
