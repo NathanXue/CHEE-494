@@ -1,12 +1,12 @@
 clear;clc;clf
 
-x_length = 500; % Angstrom, from dump file
-y_length = 48; % Angstrom, from dump file
+x_length = 500; % Angstrom, USER DEFINED
+y_length = 48; % Angstrom, USER DEFINED
 z_length = 3.35; % Angstrom, thickness of single layer graphene from literature
-timestep = 0.0005; % ps
+timestep = 0.0005; % ps, TIMESTEP SIZE IN LAMMPS
 
 %% -------------------Temperature Profile-------------------------------
-filename = "temp_equ.dat";
+filename = "temp_equ.dat"; % READ TEMPERATURE PROFILE
 delimiterIn = ' ';
 headerlinesIn = 4;
 imported = importdata(filename,delimiterIn,headerlinesIn);
@@ -16,7 +16,7 @@ position = temp(10:90,2); % Dimensionless
 real_position = position * x_length; % Angstrom
 temperature = temp(10:90,4); % Kelvin
 figure(1)
-ylim([200 400])
+ylim([200 400]) % USER DEFINED
 hold on
 plot(temp(:,2),temp(:,4),".")
 
@@ -33,7 +33,7 @@ ylabel("Temperature (K)")
 hold off
 
 %% -------------------Heat Flux-------------------------------
-filename = "Ener_equ.dat";
+filename = "Ener_equ.dat"; % READ THERMOSTAT DUTY
 delimiterIn = ' ';
 headerlinesIn = 1;
 imported = importdata(filename,delimiterIn,headerlinesIn);
