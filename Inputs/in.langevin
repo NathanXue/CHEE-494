@@ -11,6 +11,8 @@ neighbor          0.3 bin
 timestep          0.0005
 #read data file
 read_data        gp.data
+#replicate the cell to form larger graphene
+#replicate 2 1 1
 #potential setting
 pair_style       tersoff/gpu
 pair_coeff       * * C.tersoff C
