@@ -77,6 +77,9 @@ group   fixed_R     region  fixed_R        #fixed R
 group   mobile      subtract all fixed_L fixed_R
 reset_timestep 0
 
+#Delete 0.1% of atoms in mobile group
+#delete_atoms random fraction 0.001 yes mobile NULL 12345
+
 #change boundary condition in x-direction to fixed
 change_box all boundary  f p p 
 
